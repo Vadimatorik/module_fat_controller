@@ -202,7 +202,7 @@ public:
      *
      * \return			{	Длина трека или 0xFFFFFFFF	}
      */
-    uint32_t getFileSize (std::shared_ptr<FIL> file);
+    uint32_t getFileSize (std::shared_ptr<FIL> file) const;
 
 
     int readFromFile (std::shared_ptr<FIL> file,
@@ -245,7 +245,6 @@ public:
        * \param[out]		fInfo		-	объект структуры информации о файле FatFS.
        */
     static int findingFileInDir (DIR *d, FILINFO *fInfo);
-
     static int setOffsetByteInOpenFile (FIL *f, uint32_t offset);
 
     /*!

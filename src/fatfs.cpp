@@ -275,7 +275,7 @@ std::shared_ptr<FIL> fatfs::openFile (std::shared_ptr<char> path,
     return this->openFile(fullPath, returnResult);
 }
 
-uint32_t fatfs::getFileSize (std::shared_ptr<FIL> file) {
+uint32_t fatfs::getFileSize (std::shared_ptr<FIL> file) const {
     return f_size(file);
 }
 
