@@ -206,7 +206,7 @@ std::shared_ptr<FIL> fatfs::openFileListWithRewrite (std::shared_ptr<char> fullP
 }
 
 
-int fatfs::closeFile (std::shared_ptr<FIL> file) {
+int fatfs::close_file (std::shared_ptr<FIL> file) {
     FRESULT r;
 
     r = f_close(file.get());
@@ -275,13 +275,13 @@ std::shared_ptr<FIL> fatfs::openFile (std::shared_ptr<char> path,
     return this->openFile(fullPath, returnResult);
 }
 
-uint32_t fatfs::getFileSize (std::shared_ptr<FIL> file) const {
+uint32_t fatfs::size (std::shared_ptr<FIL> file) const {
     return f_size(file);
 }
 
-int fatfs::readFromFile (std::shared_ptr<FIL> file,
-                       uint8_t *returnDataArray,
-                       uint32_t countReadByte) {
+int fatfs::read (std::shared_ptr<FIL> file,
+                 uint8_t *returnDataArray,
+                 uint32_t countReadByte) {
     UINT l;
     FRESULT r;
 

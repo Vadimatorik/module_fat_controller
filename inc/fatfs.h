@@ -202,12 +202,12 @@ public:
      *
      * \return			{	Длина трека или 0xFFFFFFFF	}
      */
-    uint32_t getFileSize (std::shared_ptr<FIL> file) const;
+    uint32_t size (std::shared_ptr<FIL> file) const;
 
 
-    int readFromFile (std::shared_ptr<FIL> file,
-                      uint8_t *returnDataArray,
-                      uint32_t countReadByte);
+    int read (std::shared_ptr<FIL> file,
+              uint8_t *returnDataArray,
+              uint32_t countReadByte);
 
 
     int setOffsetByteInFile (std::shared_ptr<FIL> file,
@@ -237,7 +237,7 @@ public:
      * 						-1	-	файл закрыт с ошибкой, объект
      * 								файла FatFS удален.	}
      */
-    int closeFile (std::shared_ptr<FIL> file);
+    int close_file (std::shared_ptr<FIL> file);
 
     /*!
        * Продолжает поиск файла по заданной методом startFindingFileInDir маске.
